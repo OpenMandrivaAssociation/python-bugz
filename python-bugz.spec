@@ -7,7 +7,8 @@ Name:		%name
 Version:    0.6.11	
 Release:	%release
 Source0:    http://media.liquidx.net/static/%name/%module_name-%version.tar.bz2	
-Patch:      pybugz-0.6.11-python25.diff
+Patch0:      pybugz-0.6.11-python25.diff
+Patch1:      pybugz-0.6.11-fix-import.patch
 License:	GPL
 Group:		Development/Python
 Url:		http://www.liquidx.net/pybugz/
@@ -32,7 +33,8 @@ use on other Bugzillas.
 %prep
 %setup -q -n %module_name-%version
 perl -pi -e 's|http://bugs.gentoo.org/|http://qa.mandriva.com/|' bugz.py
-%patch -p0
+%patch0 -p0
+%patch1 -p0
 
 %build
 python setup.py build
