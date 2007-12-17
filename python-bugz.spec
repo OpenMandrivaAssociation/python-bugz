@@ -11,7 +11,6 @@ Patch0:      pybugz-0.6.11-python25.diff
 License:	GPL
 Group:		Development/Python
 Url:		http://www.liquidx.net/pybugz/
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: python-devel
 BuildArch: noarch
 Requires:  python-elementtree
