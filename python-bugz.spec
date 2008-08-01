@@ -1,7 +1,7 @@
 %define module_name pybugz
 
 %define name python-bugz
-%define release		%mkrel 7
+%define release		%mkrel 8
 Summary:    A python and command line interface to Bugzilla 
 Name:		%name
 Version:    0.6.11	
