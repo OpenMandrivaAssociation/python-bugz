@@ -1,16 +1,15 @@
 %define module_name pybugz
 
 %define name python-bugz
-%define release		%mkrel 10
+%define release		%mkrel 1
 Summary:    A python and command line interface to Bugzilla 
 Name:		%name
-Version:    0.6.11	
+Version:    0.8.0
 Release:	%release
-Source0:    http://media.liquidx.net/static/%name/%module_name-%version.tar.bz2	
-Patch0:      pybugz-0.6.11-python25.diff
+Source0:    http://pybugz.googlecode.com/files/pybugz-%version.tar.gz
 License:	GPL
 Group:		Development/Python
-Url:		http://www.liquidx.net/pybugz/
+Url:		http://code.google.com/p/pybugz/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: python-devel
 BuildArch: noarch
@@ -31,8 +30,7 @@ use on other Bugzillas.
 
 %prep
 %setup -q -n %module_name-%version
-perl -pi -e 's|http://bugs.gentoo.org/|http://qa.mandriva.com/|' bugz.py
-%patch0 -p0
+perl -pi -e 's|http://bugs.gentoo.org/|http://qa.mandriva.com/|' bugz/cli.py
 
 %build
 python setup.py build
