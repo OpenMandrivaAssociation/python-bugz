@@ -7,6 +7,8 @@ Name:		%name
 Version:    0.8.0
 Release:	%release
 Source0:    http://pybugz.googlecode.com/files/pybugz-%version.tar.gz
+Patch0:		pybugz-really-receive-auth-cookie.patch
+Patch1:		pybugz-properly-modify-bugz.patch
 License:	GPL
 Group:		Development/Python
 Url:		http://code.google.com/p/pybugz/
@@ -30,7 +32,9 @@ use on other Bugzillas.
 
 %prep
 %setup -q -n %module_name-%version
-perl -pi -e 's|http://bugs.gentoo.org/|http://qa.mandriva.com/|' bugz/cli.py
+%patch0 -p1
+%patch1 -p1
+perl -pi -e 's|http://bugs.gentoo.org/|https://qa.mandriva.com/|' bugz/cli.py
 
 %build
 python setup.py build
