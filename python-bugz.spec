@@ -2,7 +2,7 @@
 %define shortname bugz
 
 %define name python-bugz
-%define release		%mkrel 2
+%define release		%mkrel 3
 Summary:    A python and command line interface to Bugzilla 
 Name:		%name
 Version:    0.8.0
@@ -10,6 +10,7 @@ Release:	%release
 Source0:    http://pybugz.googlecode.com/files/pybugz-%version.tar.gz
 Patch0:		pybugz-really-receive-auth-cookie.patch
 Patch1:		pybugz-properly-modify-bugz.patch
+Patch2:		pybugz-python2.7.patch
 License:	GPL
 Group:		Development/Python
 Url:		http://code.google.com/p/pybugz/
@@ -35,6 +36,7 @@ use on other Bugzillas.
 %setup -q -n %module_name-%version
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 perl -pi -e 's|http://bugs.gentoo.org/|https://qa.mandriva.com/|' bugz/cli.py
 
 %build
