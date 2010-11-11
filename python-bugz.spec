@@ -1,7 +1,8 @@
 %define module_name pybugz
+%define shortname bugz
 
 %define name python-bugz
-%define release		%mkrel 1
+%define release		%mkrel 2
 Summary:    A python and command line interface to Bugzilla 
 Name:		%name
 Version:    0.8.0
@@ -41,14 +42,15 @@ python setup.py build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-python setup.py install --root=$RPM_BUILD_ROOT --record=INSTALLED_FILES
+python setup.py install --root=$RPM_BUILD_ROOT
 
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -f INSTALLED_FILES 
+%files
 %defattr(-,root,root) 
 %doc README
-
-
+%_bindir/bugz
+%{py_sitedir}/%{shortname}/
+%{py_sitedir}/%{module_name}-%{version}-py%{pyver}.egg-info
