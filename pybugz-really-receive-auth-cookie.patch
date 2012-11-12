@@ -1,0 +1,19 @@
+commit 46d5f9664e9554ceb20d398c69483a6f6044355b
+Author: Bogdano Arendartchuk <bogdano@mandriva.com.br>
+Date:   Wed Oct 14 15:00:11 2009 -0300
+
+    Send Bugzilla_remember on auth in order to really receive the auth cookie
+
+diff --git a/bugz/bugzilla.py b/bugz/bugzilla.py
+index 7e1a2a9..e28ef6b 100644
+--- a/bugz/bugzilla.py
++++ b/bugz/bugzilla.py
+@@ -255,6 +255,8 @@ class Bugz:
+ 		qparams = config.params['auth'].copy()
+ 		qparams['Bugzilla_login'] = self.user
+ 		qparams['Bugzilla_password'] = self.password
++		if not self.forget:
++			qparams['Bugzilla_remember'] = 'on'
+ 
+ 		req_url = urljoin(self.base, config.urls['auth'])
+ 		req = Request(req_url, urlencode(qparams), config.headers)
