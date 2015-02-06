@@ -4,7 +4,7 @@
 Summary:    A python and command line interface to Bugzilla 
 Name:		python-bugz
 Version:    0.8.0
-Release:	4
+Release:	5
 Source0:    http://pybugz.googlecode.com/files/pybugz-%version.tar.gz
 Patch0:		pybugz-really-receive-auth-cookie.patch
 Patch1:		pybugz-properly-modify-bugz.patch
