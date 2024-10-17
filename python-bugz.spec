@@ -11,7 +11,7 @@ Patch1:		pybugz-properly-modify-bugz.patch
 Patch2:		pybugz-python2.7.patch
 License:	GPL
 Group:		Development/Python
-Url:		http://code.google.com/p/pybugz/
+Url:		https://code.google.com/p/pybugz/
 BuildRequires: python-devel
 BuildArch: noarch
 Requires:  python-elementtree
