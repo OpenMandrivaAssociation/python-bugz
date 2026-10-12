@@ -4,7 +4,7 @@
 Name:		python-bugz
 Summary:	A python and command line interface to Bugzilla
 Version:	0.14
-Release:	1
+Release:	2
 License:	GPL-2.0
 Group:		Development/Python
 URL:		https://github.com/williamh/pybugz
